@@ -1,17 +1,17 @@
 {
-    "id": "hello-world", 
-    "cmd": "while [ true ] ; do echo '[ $JOB_NAME ] Hello Marathon' ; sleep 5 ; done",
-    "cpus": 0.1,
-    "mem": 10.0,
+    "id": "nginx",
+    "container": {
+    "type": "DOCKER",
+    "docker": {
+          "image": "mesosphere/simple-docker",
+          "network": "BRIDGE",
+          "portMappings": [
+            { "hostPort": 80, "containerPort": 80, "protocol": "tcp"}
+          ]
+        }
+    },
+    "acceptedResourceRoles": ["slave_public"],
     "instances": 1,
-    "acceptedResourceRoles": [
-        "slave_public",
-        "*"
-    ],
-    "constraints": [
-        [
-            "hostname",
-            "UNIQUE"
-        ]
-    ]
-  }
+    "cpus": 0.1,
+    "mem": 64
+}

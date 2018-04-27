@@ -13,7 +13,7 @@ node{
             credentialsId: 'dcos-auth-token',
             docker: '', 
             env: [[name: 'JOB_NAME', value: 'test-pipelin']], 
-            id: '/hello-world', 
+            id: '/nginx', 
             url: 'http://mesos-test.nexla.com'
         )
     }
