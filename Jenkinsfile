@@ -9,11 +9,11 @@ node{
     stage ('Marathon Deploy')
     {
         echo "#>Deploying to marathon"
-        marathon(
-            credentialsId: '512a204c-8ebc-428c-8b9b-49701b155b33', 
+        marathon(            
+            credentialsId: 'dcos-auth-token',
             docker: '', 
             env: [[name: 'JOB_NAME', value: 'test-pipelin']], 
-            id: '', 
+            id: '/hello-world', 
             url: 'http://mesos-test.nexla.com'
         )
     }
