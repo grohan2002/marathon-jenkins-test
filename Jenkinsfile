@@ -14,7 +14,7 @@ node{
             docker: '', 
             env: [[name: 'JOB_NAME', value: 'test-pipelin']], 
             id: '/hello-world-test', 
-            url: 'http://mesos-test.nexla.com'
+            url: 'http://mesos-test.nexla.com/service/marathon'
         )
     }
 
